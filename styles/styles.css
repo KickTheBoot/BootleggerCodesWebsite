@@ -135,6 +135,7 @@ ul.navBar
 .content > div
 {
     padding: 8px;
+    filter: var(--shadow);
 }
 
 .sideBar
