@@ -1,8 +1,44 @@
+:root {
+    --3d-effect-offset: 0px 2px 0px;
+    --3d-effect-offset-small: 0px 1px 0px;
+
+    /*Gradients*/
+    --orange-gradient-1: linear-gradient(to bottom, var(--Lightest2), var(--Mid2), var(--Darkest2));
+    --orange-gradient-2: linear-gradient(to bottom, var(--Mid2), var(--Dark2), var(--Darkest2));
+    
+    --gray-gradient: linear-gradient(to bottom, gray, darkgray , black);
+
+    /*Colors*/
+    --Lightest1: #FFAAAA;
+    --Light1: #D46A6A;
+    --Mid1: #AA3939;
+    --Dark1:#801515;
+    --Darkest1: #550000;
+
+    --Lightest2: #FFD1AA;
+    --Light2: #D49A6A;
+    --Mid2: #AA6C39;
+    --Dark2: #804515;
+    --Darkest2: #552600;
+
+    --Lightest3: #CD88AF;
+    --Light3: #AA5585;
+    --Mid3: #882D61;
+    --Dark3: #661141;
+    --Darkest3: #440027;
+
+    /*Shadows and other effects*/
+    --shadow: drop-shadow(2px 2px 2px black);
+    --3d-effect-orange: drop-shadow( var(--3d-effect-offset) var(--Darkest2) );
+    --3d-effect-orange-small: drop-shadow( var(--3d-effect-offset) var(--Darkest2));
+    --3d--effect-gray: drop-shadow(var(--3d-effect-offset-small) #333333);
+
+}
+
 html
 {
     margin: 0px;
-    background-color: #ffaaaa;
-    filter: hue-rotate(0.5deg);
+    background-color: var(--Lightest1);
 }
 
 body {
@@ -17,8 +53,16 @@ body {
 .topBar
 {
     margin:  0 0 1cm 0;
-    background-color: #661141;
-    box-shadow: 0px 5px 2px black;
+    background-color: var(--Dark3);
+    filter: drop-shadow(0px 5px 3px black);
+}
+
+p
+{
+    background-image: var(--orange-gradient-1);
+    background-clip: text;
+    color: transparent;
+    filter: var(--shadow);
 }
 
 h1, h2, h3, h4, h5, h6, p, a
@@ -29,10 +73,11 @@ h1, h2, h3, h4, h5, h6, p, a
 h1, h2, h3, h4, h5, h6
 {
     color: transparent;
-    background-image: linear-gradient(to bottom, #FFD1AA, #AA6C39, #552600);
+    background-image: var(--orange-gradient-1);
     transform:translate(-2px, -2px);
     background-clip: text;
-    filter: drop-shadow(2px 2px 2px black);
+    filter: var(--3d-effect-orange) var(--shadow);
+
 }
 
 li > a
@@ -40,9 +85,9 @@ li > a
     text-decoration: none;
     color: transparent;
     text-shadow: none;
-    background-image: linear-gradient(to bottom, gray, darkgray , black);
+    background-image: var(--gray-gradient);
     background-clip: text;
-    filter: drop-shadow(2px 2px 2px black);
+    filter: var(--3d--effect-gray) var(--shadow);
 
 }
 
@@ -53,7 +98,7 @@ ul.navBar
     margin: 0;
     padding: 0;
     height: 40px;
-    background-image: linear-gradient(to bottom, #FFD1AA, #AA6C39, #552600);
+    background-image: var(--orange-gradient-1);
     overflow: visible;
 }
 
@@ -62,8 +107,8 @@ ul.navBar
     float:left;
     height: 100%;
     margin: 0;
-    border-right: 2px solid #552600;
-    background-image: linear-gradient(to bottom, #FFD1AA, #AA6C39, #552600);
+    border-right: 2px solid var(--Darkest2);
+    background-image: var(--orange-gradient-1);
 }
 
 .navBar > li a
@@ -74,7 +119,7 @@ ul.navBar
 
 .navBar > li:hover
 {
-    background-image: linear-gradient(to bottom, #AA6C39, #804515);
+    background-image: var(--orange-gradient-2);
 }
 
 .content
@@ -94,15 +139,14 @@ ul.navBar
 
 .sideBar
 {
-    background-color: #801515;
+    background-color: var(--Dark1);
     grid-area: 1 / 1 / span 3 / 1;
 }
 
 .projectsDisplay
 {
-    background-color: #801515;
+    background-color: var(--Dark1);
     grid-area: 1 / 2 / span 3 / span 5;
     align-items: center;
-
 }
 
