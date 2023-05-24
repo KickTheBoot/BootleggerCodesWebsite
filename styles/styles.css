@@ -2,6 +2,7 @@ html
 {
     margin: 0px;
     background-color: #ffaaaa;
+    filter: hue-rotate(0.5deg);
 }
 
 body {
@@ -15,7 +16,7 @@ body {
 
 .topBar
 {
-    margin: 0 0 0 0;
+    margin:  0 0 1cm 0;
     background-color: #661141;
     box-shadow: 0px 5px 2px black;
 }
@@ -27,14 +28,22 @@ h1, h2, h3, h4, h5, h6, p, a
 
 h1, h2, h3, h4, h5, h6
 {
-    color: #AA6C39;
+    color: transparent;
+    background-image: linear-gradient(to bottom, #FFD1AA, #AA6C39, #552600);
+    transform:translate(-2px, -2px);
+    background-clip: text;
+    filter: drop-shadow(2px 2px 2px black);
 }
 
 li > a
 {
     text-decoration: none;
-    color: white;
+    color: transparent;
     text-shadow: none;
+    background-image: linear-gradient(to bottom, gray, darkgray , black);
+    background-clip: text;
+    filter: drop-shadow(2px 2px 2px black);
+
 }
 
 ul.navBar
@@ -44,7 +53,7 @@ ul.navBar
     margin: 0;
     padding: 0;
     height: 40px;
-    background-color: #440027;
+    background-image: linear-gradient(to bottom, #FFD1AA, #AA6C39, #552600);
     overflow: visible;
 }
 
@@ -54,7 +63,7 @@ ul.navBar
     height: 100%;
     margin: 0;
     border-right: 2px solid #552600;
-    background-image: linear-gradient(to bottom, #D49A6A, #AA6C39 );
+    background-image: linear-gradient(to bottom, #FFD1AA, #AA6C39, #552600);
 }
 
 .navBar > li a
@@ -65,13 +74,14 @@ ul.navBar
 
 .navBar > li:hover
 {
-    background-image: linear-gradient(to bottom, #FFD1AA, #D49A6A);
+    background-image: linear-gradient(to bottom, #AA6C39, #804515);
 }
 
 .content
 {
-    margin: auto 50px auto 50px;
-    padding: 8px;
+    max-width: max-content;
+    min-width: min-content;
+    margin: auto;
     display: grid;
     column-gap: 5px;
     row-gap: 5px;
@@ -85,12 +95,14 @@ ul.navBar
 .sideBar
 {
     background-color: #801515;
-    grid-area: 1 / 3 / 3/ 3;
+    grid-area: 1 / 1 / span 3 / 1;
 }
 
 .projectsDisplay
 {
     background-color: #801515;
-    grid-area: 1 / 1 / 3 / 3;
+    grid-area: 1 / 2 / span 3 / span 5;
+    align-items: center;
+
 }
 
