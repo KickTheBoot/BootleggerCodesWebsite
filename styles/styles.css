@@ -126,30 +126,32 @@ ul.navBar
 
 .content
 {
-    max-width: max-content;
-    min-width: min-content;
     margin: auto;
-    display: grid;
+    max-width: 80%;
+    display: flex;
+    flex-wrap: wrap;
     column-gap: 5px;
     row-gap: 5px;
+    justify-content: center;
+    align-items: stretch;
 }
 
 .content > div
 {
-    padding: 8px;
+    display: block;
+    background-color: var(--Dark1);
+    padding: 10px;
     filter: var(--shadow);
+    margin: 8px;
+    flex-basis: 568px;
+
+    border-radius: 10px;
 }
 
-.sideBar
-{
-    background-color: var(--Dark1);
-    grid-area: 1 / 1 / span 3 / 1;
-}
 
-.projectsDisplay
-{
-    background-color: var(--Dark1);
-    grid-area: 1 / 2 / span 3 / span 5;
-    align-items: center;
+@media (max-width: 100px) {
+    .content > div {
+        flex: 100%;
+    }
 }
 
