@@ -3,10 +3,12 @@
     --3d-effect-offset-small: 0px 1px 0px;
 
     /*Gradients*/
-    --orange-gradient-1: linear-gradient(to bottom, var(--Lightest2), var(--Mid2), var(--Darkest2));
-    --orange-gradient-2: linear-gradient(to bottom, var(--Mid2), var(--Dark2), var(--Darkest2));
+    --orange-gradient: linear-gradient(to bottom, var(--Lightest2), var(--Mid2), var(--Darkest2));
+    --orange-gradient-dark: linear-gradient(to bottom, var(--Mid2), var(--Dark2), var(--Darkest2));
+
+    --orange-gradient-repeating: repeating-linear-gradient(to bottom, var(--Lightest2), var(--Mid2), var(--Darkest2) 1.375em);
     
-    --gray-gradient: linear-gradient(to bottom, gray, darkgray , black);
+    --gray-gradient: linear-gradient(to bottom, gray, white , black);
 
     /*Colors*/
     --Lightest1: #FFAAAA;
@@ -47,7 +49,7 @@ body {
 
 .siteHeader
 {
-    padding: 5px;
+    padding: 8px;
 }
 
 .topBar
@@ -59,7 +61,7 @@ body {
 
 p
 {
-    background-image: var(--orange-gradient-1);
+    background-image: var(--orange-gradient-repeating);
     background-clip: text;
     color: transparent;
     filter: var(--shadow);
@@ -73,7 +75,7 @@ h1, h2, h3, h4, h5, h6, p, a
 h1, h2, h3, h4, h5, h6
 {
     color: transparent;
-    background-image: var(--orange-gradient-1);
+    background-image: var(--orange-gradient-repeating);
     transform:translate(-2px, -2px);
     background-clip: text;
     filter: var(--3d-effect-orange) var(--shadow);
@@ -98,7 +100,7 @@ ul.navBar
     margin: 0;
     padding: 0;
     height: 40px;
-    background-image: var(--orange-gradient-1);
+    background-image: var(--orange-gradient);
     overflow: visible;
 }
 
@@ -108,7 +110,7 @@ ul.navBar
     height: 100%;
     margin: 0;
     border-right: 2px solid var(--Darkest2);
-    background-image: var(--orange-gradient-1);
+    background-image: var(--orange-gradient);
 }
 
 .navBar > li a
@@ -119,7 +121,7 @@ ul.navBar
 
 .navBar > li:hover
 {
-    background-image: var(--orange-gradient-2);
+    background-image: var(--orange-gradient-dark);
 }
 
 .content
