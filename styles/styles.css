@@ -5,10 +5,11 @@
     /*Gradients*/
     --orange-gradient: linear-gradient(to bottom, var(--Lightest2), var(--Mid2), var(--Darkest2));
     --orange-gradient-dark: linear-gradient(to bottom, var(--Mid2), var(--Dark2), var(--Darkest2));
-
     --orange-gradient-repeating: repeating-linear-gradient(to bottom, var(--Lightest2), var(--Mid2), var(--Darkest2) 1.375em);
+
     
     --gray-gradient: linear-gradient(to bottom, gray, white , black);
+    --gray-gradient-repeating: repeating-linear-gradient(to bottom, gray, white, black 1.375em);
 
     /*Colors*/
     --Lightest1: #FFAAAA;
@@ -61,7 +62,7 @@ body {
 
 p
 {
-    background-image: var(--orange-gradient-repeating);
+    background-image: var(--gray-gradient-repeating);
     background-clip: text;
     color: transparent;
     filter: var(--shadow);
