@@ -6,7 +6,7 @@
     --orange-gradient: linear-gradient(to bottom, var(--Lightest2), var(--Mid2), var(--Darkest2));
     --orange-gradient-dark: linear-gradient(to bottom, var(--Mid2), var(--Dark2), var(--Darkest2));
     --orange-gradient-repeating: repeating-linear-gradient(to bottom, var(--Lightest2), var(--Mid2), var(--Darkest2) 1.375em);
-
+    --orange-gradient-repeating-40px: repeating-linear-gradient(to bottom, var(--Lightest2), var(--Mid2), var(--Darkest2) 40px);
     
     --gray-gradient: linear-gradient(to bottom, gray, white , black);
     --gray-gradient-repeating: repeating-linear-gradient(to bottom, gray, white, black 1.375em);
@@ -83,16 +83,6 @@ h1, h2, h3, h4, h5, h6
 
 }
 
-li > a
-{
-    text-decoration: none;
-    color: transparent;
-    text-shadow: none;
-    background-image: var(--gray-gradient);
-    background-clip: text;
-    filter: var(--3d--effect-gray) var(--shadow);
-
-}
 
 ul.navBar
 {
@@ -100,24 +90,37 @@ ul.navBar
     list-style-type: none;
     margin: 0;
     padding: 0;
-    height: 40px;
-    background-image: var(--orange-gradient);
-    overflow: visible;
+    min-height: 40px;
+    background-image: var(--orange-gradient-dark);
+    flex-direction: row;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: stretch;
+    justify-content: flex-start;
+    flex-direction: row;
+    flex-basis: content;
 }
 
 .navBar > li
 {
-    float:left;
-    height: 100%;
+    min-height: 40px;
+    padding: 8px;
     margin: 0;
     border-right: 2px solid var(--Darkest2);
     background-image: var(--orange-gradient);
+
 }
 
 .navBar > li a
 {
-    display: block;
-    padding: 8px;
+
+    
+    text-decoration: none;
+    color: transparent;
+    text-shadow: none;
+    background-image: var(--gray-gradient);
+    background-clip: text;
+    filter: var(--3d--effect-gray) var(--shadow);
 }
 
 .navBar > li:hover
@@ -150,9 +153,18 @@ ul.navBar
 }
 
 
-@media (max-width: 100px) {
+@media (max-width: 500px) {
     .content > div {
         flex: 100%;
+    }
+    ul.navBar
+    {
+        flex-direction: column;
+    }
+    ul.navBar> li
+    {
+        flex-grow: 1;
+        border-bottom: 2px solid var(--Darkest2);
     }
 }
 
